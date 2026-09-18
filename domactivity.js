@@ -24,22 +24,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (e.target.tagName !== "IMG") return;
                 const id = e.target.dataset.id;
                 const painting = paintings.find(p => p.id === id);
-                // Clear previous content
+                //clears previous content
                 figure.innerHTML = "";
                 description.textContent = "";
-                // Add large image
+                //add the new large image
                 const big = document.createElement("img");
                 big.id = "full";
                 big.src = `images/large/${painting.id}.jpg`;
                 figure.appendChild(big);
-                // Update title + artist
+                //update title and artist
                 title.textContent = painting.title;
                 artist.textContent = painting.artist;
-                // Draw feature rectangles
+                //draw the feature rectangles
                 painting.features.forEach(feature => {
                     const box = document.createElement("div");
                     box.classList.add("box");
-                    // JSON uses arrays: [x,y]
+                    //the upperleft and lower right coordinates of the feature rectangle
                     const x1 = feature.upperLeft[0];
                     const y1 = feature.upperLeft[1];
                     const x2 = feature.lowerRight[0];
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     box.style.top = y1 + "px";
                     box.style.width = (x2 - x1) + "px";
                     box.style.height = (y2 - y1) + "px";
-                    // Hover handlers
+                    //hover handlers
                     box.addEventListener("mouseover", () => {
                         description.textContent = feature.description;
                     });
