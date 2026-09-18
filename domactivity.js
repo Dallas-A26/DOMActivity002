@@ -1,4 +1,6 @@
+//this is so that the code runs after the DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
+    //fetch the paintings data from the JSON file needs to be done
     fetch("paintings.json")
         .then(response => response.json())
         .then(paintings => {
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             paintings.forEach(p => {
                 const li = document.createElement("li");
                 const img = document.createElement("img");
+                //Co pilot helped me with lines 18-22
                 img.src = `images/small/${p.id}.jpg`;
                 img.dataset.id = p.id;   // store the ID for later
                 img.alt = p.title;
