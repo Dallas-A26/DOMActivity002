@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch("paintings.json")
         .then(response => response.json())
         .then(paintings => {
-            // Process the paintings data
+            //the paintings data
             const list = document.querySelector("#paintings ul");
             const figure = document.querySelector("figure");
             const title = document.querySelector("#title");
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
                       box.addEventListener("mouseout", () => {
                         description.textContent = "";
                     });
-
                     figure.appendChild(box);
                 });
             });
