@@ -1,7 +1,4 @@
-const content = `
 [
-
-
 { "id": "099160",
   "artist": "Raphael",
   "year": 1510,
@@ -230,5 +227,4 @@ const content = `
 	}
   ]
 }
-
-]`;
+]

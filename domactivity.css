@@ -60,6 +60,7 @@ h3 {
 
 }
 .box {
+   position: absolute;
    border: 1px solid red;
    background-color: #3d3D3d;
    opacity: 0.4;
